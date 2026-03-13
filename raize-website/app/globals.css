@@ -1,26 +1,87 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ─── Design Tokens (from DESIGN.md) ─── */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* ── Brand Colours ── */
+  --color-primary: #2563EB;
+  --color-primary-dark: #1D4ED8;
+  --color-primary-light: #DBEAFE;
+
+  --color-accent-yellow: #FACC15;
+  --color-accent-yellow-dark: #CA8A04;
+
+  --color-accent-coral: #F43F5E;
+  --color-accent-coral-dark: #E11D48;
+
+  --color-accent-green: #10B981;
+  --color-accent-green-dark: #059669;
+
+  --color-accent-violet: #8B5CF6;
+  --color-accent-violet-dark: #7C3AED;
+
+  /* ── Surfaces ── */
+  --color-background: #FFFFFF;
+  --color-surface: #F8FAFC;
+  --color-surface-tinted: #EFF6FF;
+
+  /* ── Text ── */
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94A3B8;
+
+  /* ── Borders ── */
+  --color-border: #E2E8F0;
+  --color-border-strong: #CBD5E1;
+
+  /* ── Semantic ── */
+  --color-success: #10B981;
+  --color-error: #F43F5E;
+  --color-warning: #FACC15;
+
+  /* ── Footer dark ── */
+  --color-footer-bg: #0F172A;
+
+  /* ── Fonts ── */
+  --font-heading: var(--font-space-grotesk), 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), 'JetBrains Mono', ui-monospace, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ─── Base Styles ─── */
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* ─── Utility: Container ─── */
+
+.container-site {
+  max-width: 80rem; /* max-w-7xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-site {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media (min-width: 1024px) {
+  .container-site {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }

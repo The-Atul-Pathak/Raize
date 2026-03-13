@@ -176,6 +176,14 @@ Languages: English only
 WhatsApp number: +91 8107766700
 Special requirements: None
 
+## PROJECT STRUCTURE NOTE
+This project has NO src/ directory. All paths are relative to raize-website/ root:
+- Pages:      /app/[page]/page.tsx
+- Components: /components/ui/ and /components/sections/
+- Styles:     /app/globals.css
+- Tokens:     /lib/tokens.ts
+- Assets:     /public/assets/
+
 ## DESIGN ENHANCEMENT PHASES (to run between Phase 2 and Phase 3)
 Per Phase Selection Guide — rAIze is an AI/tech startup and this is our showpiece portfolio website:
 - Phase 2A: Scroll Reveal & Entrance Animations (mandatory baseline)

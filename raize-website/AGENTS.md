@@ -29,12 +29,51 @@ You always update PROGRESS.md at the end of every session.
 - Format: npx prettier --write .
 
 ## PROJECT STRUCTURE
-- Routes live in /src/app/[page]/page.tsx
-- Shared components live in /src/components
-- Page-specific components live in /src/app/[page]/_components
-- Global styles in /src/styles/globals.css
-- Design tokens in /src/styles/tokens.ts
-- Static assets in /public/assets
+NOTE: This project was created WITHOUT the src/ directory.
+All source files live at the project root level, not inside /src/.
+
+- Routes live in        /app/[page]/page.tsx
+- Root layout at        /app/layout.tsx
+- Root styles at        /app/globals.css
+- Shared components at  /components/ui/          (buttons, cards, badges etc.)
+- Section components at /components/sections/    (hero, navbar, footer etc.)
+- 3D components at      /components/three/       (WebGL / particle effects)
+- Animation wrappers at /components/ui/          (RevealWrapper, CountUp etc.)
+- Page-specific files at /app/[page]/_components/
+- Design tokens at      /lib/tokens.ts
+- Utility functions at  /lib/utils.ts
+- Static assets at      /public/assets/
+
+FOLDER TREE:
+raize-website/
+├── app/
+│   ├── layout.tsx           ← root layout (Navbar, Footer, fonts)
+│   ├── globals.css          ← global styles + Tailwind imports
+│   ├── page.tsx             ← Home (/)
+│   ├── about/
+│   │   └── page.tsx
+│   ├── services/
+│   │   └── page.tsx
+│   ├── portfolio/
+│   │   └── page.tsx
+│   └── contact/
+│       └── page.tsx
+├── components/
+│   ├── ui/                  ← reusable atoms
+│   └── sections/            ← page-level sections
+├── lib/
+│   ├── tokens.ts
+│   └── utils.ts
+├── public/
+│   └── assets/
+├── AGENTS.md
+├── SPEC.md
+├── DESIGN.md
+├── TASKS.md
+├── PROGRESS.md
+├── next.config.ts
+├── tailwind.config.ts
+└── tsconfig.json
 
 ## CODE STYLE — ALWAYS DO
 - Use TypeScript strict mode. Always type props and return values.
@@ -62,15 +101,15 @@ You always update PROGRESS.md at the end of every session.
 ## SAFETY & PERMISSIONS
 WITHOUT ASKING — allowed to:
 - Read any file in the project
-- Create new components in /src/components
-- Create new page files in /src/app
-- Edit CSS/Tailwind config
+- Create new components in /components/ui/ and /components/sections/
+- Create new page files in /app/
+- Edit /app/globals.css and tailwind.config.ts
 - Run: tsc, eslint, prettier, npm run dev
 
 ASK FIRST — must confirm before:
 - Installing any npm package
 - Deleting any file
-- Modifying package.json or next.config.js
+- Modifying package.json or next.config.ts
 - Running npm run build or git push
 - Making any change to .env or .env.local
 

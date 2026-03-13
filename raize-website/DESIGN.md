@@ -56,7 +56,7 @@ Heading font:   'Space Grotesk'   /* Google Font — geometric, techy, bold pers
 Body font:      'Inter'            /* Google Font — clean, highly readable */
 Mono font:      'JetBrains Mono'   /* For any code snippets or technical displays */
 
-/* Import in layout.tsx:
+/* Import in app/layout.tsx — NOT src/app/layout.tsx:
    Space Grotesk: weights 400, 500, 600, 700
    Inter: weights 400, 500, 600
    JetBrains Mono: weight 400 */
