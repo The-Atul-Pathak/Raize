@@ -1,2 +1,2 @@
 # Raize
-The official website of rAIze AI
+Project description and setup instructions.
