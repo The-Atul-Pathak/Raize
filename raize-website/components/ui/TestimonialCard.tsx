@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 export type TestimonialCardProps = {
   /** The testimonial quote text */
-  quote: string;
+  quote: React.ReactNode;
   /** Author name */
   author: string;
   /** Author's company or business name */

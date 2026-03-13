@@ -1,6 +1,7 @@
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
+import { Text_03 } from "@/components/ui/wave-text";
 
 export default function PortfolioPage() {
   return (
@@ -21,7 +22,7 @@ export default function PortfolioPage() {
                              Image Placeholder
                          </div>
                          <h3 className="text-xl font-bold bg-muted/20">
-                            [PLACEHOLDER: Industry Project {i}]
+                            <Text_03 text={`[PLACEHOLDER: Industry Project ${i}]`} />
                          </h3>
                          <p className="text-text-secondary text-sm">
                              [PLACEHOLDER: Outcome Summary]

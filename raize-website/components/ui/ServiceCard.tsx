@@ -2,6 +2,7 @@ import { type FC } from "react";
 import * as LucideIcons from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/Badge";
+import { Text_03 } from "@/components/ui/wave-text";
 import type { ServiceColour } from "@/lib/tokens";
 
 /* ── Types ── */
@@ -18,6 +19,10 @@ export type ServiceCardProps = {
   /** Link destination for "Learn More" */
   href?: string;
   className?: string;
+  /** Top border strip colour (Tailwind class) */
+  topColor?: string;
+  /** Border color on hover (Tailwind class) */
+  borderHover?: string;
 };
 
 /* ── Component ── */
@@ -30,19 +35,27 @@ export const ServiceCard: FC<ServiceCardProps> = ({
   comingSoon = false,
   href = "/services",
   className,
+  topColor = "bg-primary",
+  borderHover = "hover:border-primary/40",
 }) => {
   // Dynamically resolve the lucide icon
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const IconComponent = ((LucideIcons as unknown) as Record<string, LucideIcons.LucideIcon>)[icon] ?? LucideIcons.HelpCircle;
+  const IconComponent =
+    ((LucideIcons as unknown) as Record<string, LucideIcons.LucideIcon>)[icon] ??
+    LucideIcons.HelpCircle;
 
   return (
     <article
       className={cn(
-        "flex flex-col gap-4 rounded-2xl border border-border bg-white p-8",
-        "shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300",
+        "flex flex-col gap-4 overflow-hidden rounded-2xl border border-border bg-white pt-0 p-8",
+        "shadow-sm hover:shadow-lg transition-all duration-300",
+        borderHover,
         className
       )}
     >
+      {/* Top Strip */}
+      <div className={cn("h-1.5 w-full", topColor)} />
+
       {/* Icon */}
       <div
         className={cn(
@@ -55,7 +68,9 @@ export const ServiceCard: FC<ServiceCardProps> = ({
 
       {/* Title + Badge */}
       <div className="flex items-center gap-2 flex-wrap">
-        <h3 className="text-xl font-semibold text-text-primary">{title}</h3>
+        <h3 className="text-xl font-semibold text-text-primary">
+          <Text_03 text={title} />
+        </h3>
         {comingSoon && <Badge variant="coral">Coming Soon</Badge>}
       </div>
 

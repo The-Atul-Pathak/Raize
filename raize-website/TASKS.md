@@ -80,6 +80,17 @@ NOTE: Pages go in /app/[page]/page.tsx — no src/ prefix.
 - [ ] 2D.10 Apply MorphingHeadline to services section
 - [ ] 2D.11 Verify all text animations have screen-reader fallback
 
+## PHASE 2E — HORIZONTAL SCROLL (team section) ✅
+- [x] 2E.1  Confirm which section(s) use horizontal scroll — note in PROGRESS.md before starting
+- [x] 2E.2  Create <HorizontalTrack> component — outer pins, inner tracks on X axis based on scroll
+- [x] 2E.3  Calculate outer height: number of items × item width — this gives full horizontal travel
+- [x] 2E.4  Add scroll-snap behaviour on the inner track for item-by-item snapping
+- [x] 2E.5  Add progress indicator: dot row with active dot highlighted in primary colour
+- [x] 2E.6  Add prev/next arrow buttons — keyboard accessible, hide at start/end bounds
+- [x] 2E.7  Mobile fallback: standard vertical scroll, horizontal swipe with CSS overflow-x scroll
+- [x] 2E.8  Test on trackpad — horizontal momentum should feel completely native
+- [x] 2E.9  Lighthouse CLS check — pinned sections can cause layout shift. Score must stay under 0.1
+
 ## PHASE 2F — AMBIENT 3D & PARTICLE EFFECTS (hero)
 - [ ] 2F.1  Ask permission to install: three @react-three/fiber @react-three/drei
 - [ ] 2F.2  Create /components/three/ directory
@@ -107,6 +118,12 @@ NOTE: Pages go in /app/[page]/page.tsx — no src/ prefix.
 - [x] 3.12 Contact: all contact details, form styling, Calendly placeholder
 - [x] 3.13 Footer: all links, tagline, short about blurb
 - [x] 3.14 Navbar: verify logo text "r`AI`ze" with "AI" in primary coloure
+
+## PHASE 3.5 — COLOUR ENHANCEMENTS ✅
+- [x] 3.5.1 Add blurred colour blobs behind "Pain Points" and "Why rAIze" sections
+- [x] 3.5.2 Add coloured top strips and dynamic hover borders to ServiceCard component
+- [x] 3.5.3 Map services to specific vibrant colours and update icon container styles
+- [x] 3.5.4 Create solid colour StatsStrip component and add after Hero section
 
 ## PHASE 4 — INTEGRATIONS
 - [ ] 4.1  Contact form (React Hook Form + Zod + email handler via Resend)

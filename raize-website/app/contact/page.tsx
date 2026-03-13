@@ -2,6 +2,8 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
 import { WHATSAPP_URL, CONTACT_EMAIL, CONTACT_LOCATION } from "@/lib/tokens";
 
+import { Text_03 } from "@/components/ui/wave-text";
+
 export default function ContactPage() {
   return (
     <>
@@ -15,11 +17,13 @@ export default function ContactPage() {
 
           <div className="mt-16 grid gap-12 lg:grid-cols-2">
             
-            {/* Left Col: Contact Form & Calendly Placeholder */}
+            {/* Left Col: Contact Form */}
             <div className="rounded-2xl bg-white p-8 md:p-10 shadow-sm border border-border">
-                <h3 className="text-2xl font-bold font-heading mb-8">Send a Message</h3>
+                <h3 className="text-2xl font-bold font-heading mb-8">
+                  <Text_03 text="Send a Message" />
+                </h3>
                 
-                <form className="flex flex-col gap-6 mb-12">
+                <form className="flex flex-col gap-6">
                     <div className="grid gap-6 md:grid-cols-2">
                         <div className="flex flex-col gap-2">
                             <label htmlFor="name" className="text-sm font-medium text-text-primary">Name *</label>
@@ -66,15 +70,6 @@ export default function ContactPage() {
                         Send Message
                     </Button>
                 </form>
-
-                <div className="my-8 flex items-center gap-4 before:h-px before:flex-1 before:bg-border after:h-px after:flex-1 after:bg-border">
-                    <span className="text-sm font-medium text-text-muted">OR</span>
-                </div>
-
-                <div className="bg-surface border border-dashed border-border rounded-xl h-[400px] flex flex-col items-center justify-center text-center p-6 text-text-muted">
-                    <p className="mb-4">Schedule directly on our calendar.</p>
-                    <p className="text-sm">[PLACEHOLDER: insert Calendly URL]</p>
-                </div>
             </div>
 
             {/* Right Col: Contact Details */}

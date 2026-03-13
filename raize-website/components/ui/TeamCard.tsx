@@ -1,5 +1,6 @@
 import { type FC } from "react";
 import { cn } from "@/lib/utils";
+import { Text_03 } from "@/components/ui/wave-text";
 
 export type TeamCardProps = {
   /** Full name */
@@ -44,7 +45,9 @@ export const TeamCard: FC<TeamCardProps> = ({
       )}
 
       {/* Name */}
-      <h3 className="mt-4 text-xl font-semibold text-text-primary">{name}</h3>
+      <h3 className="mt-4 text-xl font-semibold text-text-primary">
+        <Text_03 text={name} />
+      </h3>
 
       {/* Role */}
       <p className="mt-1 text-sm font-medium uppercase tracking-wide text-primary">

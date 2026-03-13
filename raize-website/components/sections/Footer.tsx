@@ -1,4 +1,5 @@
 import { type FC } from "react";
+import { RaizeText } from "@/components/ui/RaizeText";
 import { NAV_LINKS, WHATSAPP_URL, CONTACT_EMAIL, CONTACT_LOCATION } from "@/lib/tokens";
 
 const SERVICE_LINKS = [
@@ -96,7 +97,7 @@ export const Footer: FC = () => {
         {/* Bottom bar */}
         <div className="mt-12 border-t border-white/10 pt-6">
           <p className="text-center text-xs text-white/40">
-            © {new Date().getFullYear()} rAIze. All rights reserved.
+            © {new Date().getFullYear()} <RaizeText />. All rights reserved.
           </p>
         </div>
       </div>

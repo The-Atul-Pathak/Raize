@@ -1,6 +1,9 @@
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
+import { RaizeText } from "@/components/ui/RaizeText";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { Text_03 } from "@/components/ui/wave-text";
 import { Zap, LayoutDashboard, Globe, Share2, PhoneCall, MessageCircle, Layers } from "lucide-react";
 
 export default function ServicesPage() {
@@ -138,7 +141,7 @@ export default function ServicesPage() {
       description: (
         <>
           <p className="mb-4">
-            rAIze is building the ultimate all-in-one business operating system. We're combining AI tools, project management, CRM capabilities, HR systems, and finance tracking into a single, unified workspace.
+            <RaizeText /> is building the ultimate all-in-one business operating system. We're combining AI tools, project management, CRM capabilities, HR systems, and finance tracking into a single, unified workspace.
           </p>
           <p>
             Say goodbye to application fatigue and fragmented data silos. Our platform is designed specifically for the needs of mid-sized teams who want enterprise power without the complexity.
@@ -158,25 +161,29 @@ export default function ServicesPage() {
     <>
       <section className="bg-surface py-20 px-4 border-b border-border">
         <div className="container-site text-center">
+          <ScrollReveal>
              <SectionHeader
                caption="Our Services"
                heading="Everything your business needs to grow."
                subtext="From your first automated workflow to a fully managed technology stack, we provide the tools and expertise to scale your operations."
                align="center"
              />
+          </ScrollReveal>
         </div>
       </section>
 
       <section className="py-20 px-4 bg-white">
         <div className="container-site max-w-4xl mx-auto flex flex-col gap-24">
-            {DETAILED_SERVICES.map((service) => (
-              <div key={service.title} className="flex flex-col md:flex-row gap-8 items-start">
+            {DETAILED_SERVICES.map((service, index) => (
+              <ScrollReveal key={service.title} delay={0.1} className="flex flex-col md:flex-row gap-8 items-start">
                   <div className={`shrink-0 flex items-center justify-center h-16 w-16 rounded-2xl ${service.colorClass} shadow-sm`}>
                       {service.icon}
                   </div>
                   <div className="flex-1">
                       <div className="flex flex-wrap items-center gap-4 mb-4">
-                          <h2 className="text-3xl font-heading font-bold text-text-primary">{service.title}</h2>
+                          <h2 className="text-3xl font-heading font-bold text-text-primary">
+                            <Text_03 text={service.title} />
+                          </h2>
                           {service.comingSoon && (
                               <Badge variant="green">Coming Soon</Badge>
                           )}
@@ -204,7 +211,7 @@ export default function ServicesPage() {
                           {service.comingSoon ? "Join the Waitlist" : "Book a Discovery Call"}
                       </Button>
                   </div>
-              </div>
+              </ScrollReveal>
             ))}
         </div>
       </section>

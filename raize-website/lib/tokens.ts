@@ -86,4 +86,4 @@ export const SERVICES: ServiceData[] = [
 export const WHATSAPP_NUMBER = "+918107766700";
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 export const CONTACT_EMAIL = "[PLACEHOLDER: hello@raize.in]";
-export const CONTACT_LOCATION = "New Delhi, India";
+export const CONTACT_LOCATION = "Serving Globally (HQ: New Delhi, India)";

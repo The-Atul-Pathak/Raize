@@ -1,11 +1,12 @@
 import { type FC, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import { Text_03 } from "@/components/ui/wave-text";
 
 export type SectionHeaderProps = {
   /** Small uppercase caption above the heading (e.g. "Our Services") */
   caption?: string;
   /** Main heading text */
-  heading: string;
+  heading: string | ReactNode;
   /** Subtext below the heading */
   subtext?: string | ReactNode;
   /** Text alignment */
@@ -37,8 +38,8 @@ export const SectionHeader: FC<SectionHeaderProps> = ({
       )}
 
       {/* Heading */}
-      <h2 className="text-3xl font-bold text-text-primary md:text-4xl">
-        {heading}
+      <h2 className="text-3xl font-bold text-text-primary md:text-4xl text-center">
+        {typeof heading === "string" ? <Text_03 text={heading} /> : heading}
       </h2>
 
       {/* Yellow strip */}

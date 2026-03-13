@@ -3,9 +3,9 @@
 # Created: March 2026
 
 ## CURRENT STATUS
-Phase: 3 (Content & Copy — complete)
-Last session: 13 March 2026 (Phase 3 — agent)
-Overall completion: 40%
+Phase: 2E (Horizontal Scroll Team Section — complete)
+Last session: 14 March 2026 (Phase 2E — agent)
+Overall completion: 50%
 
 ## COMPLETED
 - [x] 0.1  SPEC.md filled from intake form + rough content doc
@@ -35,6 +35,15 @@ Overall completion: 40%
 - [x] 2.6  Add Navbar + Footer + WhatsAppButton to /app/layout.tsx
 - [x] 2.7  Verify all routes and navigation
 - [x] 2.8  Verify mobile layout on all pages
+- [x] 2E.1 Confirmed team section uses horizontal scroll — noted in PROGRESS.md
+- [x] 2E.2 Created TeamHorizontalScroll with pinned sticky + x-axis transform
+- [x] 2E.3 Calculated outer height: teamMembers.length * 100 + 100vh
+- [x] 2E.4 Reduced-motion fallback uses overflow-x scroll with scroll-snap
+- [x] 2E.5 Added progress dot indicator with active dot highlighted in primary
+- [x] 2E.6 Added prev/next arrow buttons hidden at bounds
+- [x] 2E.7 Mobile fallback: vertical stack at < 768px
+- [x] 2E.8 Trackpad horizontal momentum is native via Framer Motion scroll transform
+- [x] 2E.9 Build verified — zero errors
 - [x] 3.1  Home: hero headline, sub-headline, CTA buttons, badge pill
 - [x] 3.2  Home: pain points section with all 5 cards + follow-on line
 - [x] 3.3  Home: services overview — all 7 service cards with icons and copy
@@ -43,15 +52,18 @@ Overall completion: 40%
 - [x] 3.6  Home: testimonials — 3 fictional placeholder testimonial cards
 - [x] 3.7  Home: final CTA section
 - [x] 3.8  About: mission statement + tagline
-- [x] 3.9  About: team section — Atul Pathak generated + 2 placeholders
+- [x] 3.9  About: team section — replaced with horizontal scroll layout
 - [x] 3.10 Services: generated 2 paragraph descriptions and benefits for all 7 services
 - [x] 3.11 Portfolio: placeholder case study cards + coming soon message
 - [x] 3.12 Contact: built functional-looking contact form + Calendly placeholder text
 - [x] 3.13 Footer: verified links and tagline
 - [x] 3.14 Navbar: verified logo formatting
+- [x] 3.5.1 Colour blobs added to Pain Points and Why rAIze sections
+- [x] 3.5.2 ServiceCard updated with top strips, hover effects, and updated icon styles
+- [x] 3.5.3 Stats Strip created and added to the homepage
 
 ## IN PROGRESS
-None — Phase 3 complete.
+None — Phase 2E complete.
 
 ## NEXT SESSION — START HERE
 **This is Phase 4: Functionality & SEO**
@@ -83,6 +95,7 @@ _Note: We deliberately preserved these placeholders per rules._
 | Real testimonials           | `[PLACEHOLDER: Realistic but fictional testimonial quote]` |
 | Real case studies           | `[PLACEHOLDER: Industry Project...]` |
 | Logo design                 | `r<span className="text-primary">AI</span>ze` is fine for now |
+| Team member 2 & 3 details   | Placeholder — needs real names, bios, photos, quotes |
 
 ## STRUCTURE NOTE — IMPORTANT
 Project created WITHOUT src/ directory. Confirmed from VS Code screenshot.
@@ -103,13 +116,13 @@ This must be respected in every agent session — never create /src/ subdirector
 - **Tailwind v4**: Project uses Tailwind v4 (CSS-based `@theme` config), not v3 `tailwind.config.ts`
 - **Dependencies added**: lucide-react, framer-motion, clsx, tailwind-merge
 
-## FILES CREATED THIS SESSION (Phase 3)
+## FILES CREATED THIS SESSION (Phase 2E)
 | File | Purpose |
 |------|---------|
-| `app/page.tsx` | All content populated from `SPEC.md` |
-| `app/about/page.tsx` | Content populated, Atul's bio generated |
-| `app/services/page.tsx` | 2-3 paragraph descriptions and benefits generated for all 7 services |
-| `app/contact/page.tsx` | Contact form input layout built |
+| `lib/teamData.ts` | Team member data for 3 members with accent colours, gradients, quotes, bios |
+| `components/ui/TeamMemberCard.tsx` | Large landscape card — two-column layout, photo/gradient, quote, details, LinkedIn |
+| `components/sections/TeamHorizontalScroll.tsx` | Pinned horizontal scroll section with progress dots and arrows |
+| `app/about/page.tsx` | Updated to use TeamHorizontalScroll instead of grid TeamCards |
 
 ## SESSION NOTES
 ---
@@ -141,3 +154,12 @@ Generated realistic placeholder 2-3 paragraph copy and benefits lists for the se
 Generated 3 realistic testimonials for the home page.
 Built a fully-styled (but inactive) Contact Form layout on the contact page.
 Verification: `npx tsc --noEmit` → 0 errors. `npm run build` → success.
+---
+Session [4] — 14 March 2026 — Agent (Phase 2E — Horizontal Scroll Team Section)
+Completed: All 9 Phase 2E tasks (2E.1–2E.9).
+Created TeamMemberCard.tsx — large landscape card with two-column layout, gradient placeholders, quote block, detail rows, LinkedIn button.
+Created TeamHorizontalScroll.tsx — pinned horizontal scroll section with Framer Motion useScroll/useTransform, progress dots, prev/next arrows.
+Mobile fallback renders vertical stack of cards at < 768px.
+useReducedMotion respected — falls back to overflow-x scroll with scroll-snap.
+Replaced old grid TeamCard section on About page.
+Verification: `npx tsc --noEmit` → 0 errors. `npm run build` → success. Browser verified.

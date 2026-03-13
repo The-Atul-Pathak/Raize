@@ -1,5 +1,6 @@
 import { type FC } from "react";
 import { cn } from "@/lib/utils";
+import { Text_03 } from "@/components/ui/wave-text";
 
 export type StepCardProps = {
   /** Step number (1, 2, 3, 4) */
@@ -39,7 +40,7 @@ export const StepCard: FC<StepCardProps> = ({
 
       {/* Title */}
       <h3 className="relative z-10 mt-2 text-xl font-semibold text-text-primary">
-        {title}
+        <Text_03 text={title} />
       </h3>
 
       {/* Description */}
