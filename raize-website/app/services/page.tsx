@@ -2,7 +2,8 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { RaizeText } from "@/components/ui/RaizeText";
-import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { RevealWrapper } from "@/components/ui/RevealWrapper";
+import { StaggerContainer } from "@/components/ui/StaggerContainer";
 import { Text_03 } from "@/components/ui/wave-text";
 import { Zap, LayoutDashboard, Globe, Share2, PhoneCall, MessageCircle, Layers } from "lucide-react";
 
@@ -161,21 +162,19 @@ export default function ServicesPage() {
     <>
       <section className="bg-surface py-20 px-4 border-b border-border">
         <div className="container-site text-center">
-          <ScrollReveal>
              <SectionHeader
                caption="Our Services"
                heading="Everything your business needs to grow."
                subtext="From your first automated workflow to a fully managed technology stack, we provide the tools and expertise to scale your operations."
                align="center"
              />
-          </ScrollReveal>
         </div>
       </section>
 
       <section className="py-20 px-4 bg-white">
-        <div className="container-site max-w-4xl mx-auto flex flex-col gap-24">
-            {DETAILED_SERVICES.map((service, index) => (
-              <ScrollReveal key={service.title} delay={0.1} className="flex flex-col md:flex-row gap-8 items-start">
+        <StaggerContainer className="container-site max-w-4xl mx-auto flex flex-col gap-24">
+            {DETAILED_SERVICES.map((service) => (
+              <RevealWrapper key={service.title} variant="fadeUp" className="flex flex-col md:flex-row gap-8 items-start">
                   <div className={`shrink-0 flex items-center justify-center h-16 w-16 rounded-2xl ${service.colorClass} shadow-sm`}>
                       {service.icon}
                   </div>
@@ -211,9 +210,9 @@ export default function ServicesPage() {
                           {service.comingSoon ? "Join the Waitlist" : "Book a Discovery Call"}
                       </Button>
                   </div>
-              </ScrollReveal>
+              </RevealWrapper>
             ))}
-        </div>
+        </StaggerContainer>
       </section>
     </>
   );

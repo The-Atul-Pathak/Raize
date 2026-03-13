@@ -11,7 +11,7 @@ import {
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { teamMembers } from "@/lib/teamData";
 import { TeamMemberCard } from "@/components/ui/TeamMemberCard";
-import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { RevealWrapper } from "@/components/ui/RevealWrapper";
 
 const CARD_WIDTH = 900;
 const GAP = 64;
@@ -69,7 +69,7 @@ export function TeamHorizontalScroll() {
     return (
       <section className="bg-white py-16 px-4">
         <div className="max-w-lg mx-auto">
-          <ScrollReveal>
+          <RevealWrapper>
             <p
               className="text-xs uppercase font-semibold text-primary mb-3"
               style={{ letterSpacing: "0.2em" }}
@@ -83,12 +83,12 @@ export function TeamHorizontalScroll() {
               </span>{" "}
               behind rAIze
             </h2>
-          </ScrollReveal>
+          </RevealWrapper>
           <div className="flex flex-col gap-8">
             {teamMembers.map((member) => (
-              <ScrollReveal key={member.id}>
+              <RevealWrapper key={member.id}>
                 <TeamMemberCard member={member} isMobile />
-              </ScrollReveal>
+              </RevealWrapper>
             ))}
           </div>
         </div>
@@ -115,7 +115,7 @@ export function TeamHorizontalScroll() {
       >
         {/* Section header — inside sticky div, absolute positioned */}
         <div className="absolute top-12 left-16 z-10">
-          <ScrollReveal>
+          <RevealWrapper>
             <p
               className="text-xs uppercase font-semibold text-primary"
               style={{ letterSpacing: "0.2em" }}
@@ -129,7 +129,7 @@ export function TeamHorizontalScroll() {
               </span>{" "}
               behind rAIze
             </h2>
-          </ScrollReveal>
+          </RevealWrapper>
         </div>
 
         {/* Horizontal track */}

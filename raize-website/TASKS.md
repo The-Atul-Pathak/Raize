@@ -44,41 +44,41 @@ NOTE: Pages go in /app/[page]/page.tsx — no src/ prefix.
 - [x] 2.7  Verify all routes work and navigation is correct
 - [x] 2.8  Verify mobile layout on all pages
 
-## PHASE 2A — SCROLL REVEAL & ENTRANCE ANIMATIONS (mandatory)
-- [ ] 2A.1  Create useScrollReveal custom hook → /lib/hooks/useScrollReveal.ts
-- [ ] 2A.2  Create <RevealWrapper> → /components/ui/RevealWrapper.tsx (fade-up entrance)
-- [ ] 2A.3  Create <StaggerContainer> → /components/ui/StaggerContainer.tsx
-- [ ] 2A.4  Create <CountUp> → /components/ui/CountUp.tsx (number animation on scroll)
-- [ ] 2A.5  Wrap all section headings and body text in <RevealWrapper>
-- [ ] 2A.6  Wrap all card grids in <StaggerContainer>
-- [ ] 2A.7  Apply <CountUp> to all stats
-- [ ] 2A.8  Add line-reveal animation to major section headings
-- [ ] 2A.9  Verify useReducedMotion() check on all animated components
-- [ ] 2A.10 Lighthouse check — score must remain 80+
+## PHASE 2A — SCROLL REVEAL & ENTRANCE ANIMATIONS (mandatory) ✅
+- [x] 2A.1  Create useScrollReveal custom hook → /lib/hooks/useScrollReveal.ts
+- [x] 2A.2  Create <RevealWrapper> → /components/ui/RevealWrapper.tsx (fade-up entrance)
+- [x] 2A.3  Create <StaggerContainer> → /components/ui/StaggerContainer.tsx
+- [x] 2A.4  Create <CountUp> → /components/ui/CountUp.tsx (number animation on scroll)
+- [x] 2A.5  Wrap all section headings and body text in <RevealWrapper>
+- [x] 2A.6  Wrap all card grids in <StaggerContainer>
+- [x] 2A.7  Apply <CountUp> to all stats
+- [x] 2A.8  Add line-reveal animation to major section headings
+- [x] 2A.9  Verify useReducedMotion() check on all animated components
+- [x] 2A.10 Lighthouse check — score must remain 80+
 
-## PHASE 2B — SCROLLYTELLING (homepage hero + How We Work)
-- [ ] 2B.1  Ask permission to install @studio-freight/lenis
-- [ ] 2B.2  Create <SmoothScrollProvider> → /components/providers/SmoothScrollProvider.tsx
-- [ ] 2B.3  Create <StickySection> → /components/ui/StickySection.tsx
-- [ ] 2B.4  Build sticky narrative for How We Work (4 steps, 200vh pin)
-- [ ] 2B.5  Create <ParallaxLayer> → /components/ui/ParallaxLayer.tsx
-- [ ] 2B.6  Apply parallax to hero background and decorative elements
-- [ ] 2B.7  Add scroll progress bar to /app/layout.tsx (2px line at top)
-- [ ] 2B.8  Mobile: all cinematic effects degrade gracefully
-- [ ] 2B.9  Lighthouse check — CLS must be under 0.1
+## PHASE 2B — SCROLLYTELLING (homepage hero + How We Work) ✅
+- [x] 2B.1  Ask permission to install @studio-freight/lenis
+- [x] 2B.2  Create <SmoothScrollProvider> → /components/providers/SmoothScrollProvider.tsx
+- [x] 2B.3  Create <StickySection> → /components/ui/StickySection.tsx
+- [x] 2B.4  Build sticky narrative for How We Work (4 steps, 200vh pin)
+- [x] 2B.5  Create <ParallaxLayer> → /components/ui/ParallaxLayer.tsx
+- [x] 2B.6  Apply parallax to hero background and decorative elements
+- [x] 2B.7  Add scroll progress bar to /app/layout.tsx (2px line at top)
+- [x] 2B.8  Mobile: all cinematic effects degrade gracefully
+- [x] 2B.9  Lighthouse check — CLS must be under 0.1
 
 ## PHASE 2D — KINETIC TYPOGRAPHY (hero + value proposition)
-- [ ] 2D.1  Ask permission to install splitting.js
-- [ ] 2D.2  Create <SplitText> → /components/ui/SplitText.tsx
-- [ ] 2D.3  Create <TypeReveal> → /components/ui/TypeReveal.tsx
-- [ ] 2D.4  Create <WordFade> → /components/ui/WordFade.tsx
-- [ ] 2D.5  Create <ScrollHighlight> → /components/ui/ScrollHighlight.tsx
-- [ ] 2D.6  Create <BlurReveal> → /components/ui/BlurReveal.tsx
-- [ ] 2D.7  Create <MorphingHeadline> → /components/ui/MorphingHeadline.tsx
-- [ ] 2D.8  Apply TypeReveal to hero H1 headline
-- [ ] 2D.9  Apply ScrollHighlight to main value proposition paragraph
-- [ ] 2D.10 Apply MorphingHeadline to services section
-- [ ] 2D.11 Verify all text animations have screen-reader fallback
+- [x] 2D.1  Ask permission to install splitting.js
+- [x] 2D.2  Create <SplitText> → /components/ui/SplitText.tsx
+- [x] 2D.3  Create <TypeReveal> → /components/ui/TypeReveal.tsx
+- [x] 2D.4  Create <WordFade> → /components/ui/WordFade.tsx
+- [x] 2D.5  Create <ScrollHighlight> → /components/ui/ScrollHighlight.tsx
+- [x] 2D.6  Create <BlurReveal> → /components/ui/BlurReveal.tsx
+- [x] 2D.7  Create <MorphingHeadline> → /components/ui/MorphingHeadline.tsx
+- [x] 2D.8  Apply TypeReveal to hero H1 headline
+- [x] 2D.9  Apply ScrollHighlight to main value proposition paragraph
+- [x] 2D.10 Apply MorphingHeadline to services section
+- [x] 2D.11 Verify all text animations have screen-reader fallback
 
 ## PHASE 2E — HORIZONTAL SCROLL (team section) ✅
 - [x] 2E.1  Confirm which section(s) use horizontal scroll — note in PROGRESS.md before starting

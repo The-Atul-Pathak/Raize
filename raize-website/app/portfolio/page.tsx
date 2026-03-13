@@ -2,6 +2,8 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Text_03 } from "@/components/ui/wave-text";
+import { StaggerContainer } from "@/components/ui/StaggerContainer";
+import { RevealWrapper } from "@/components/ui/RevealWrapper";
 
 export default function PortfolioPage() {
   return (
@@ -15,26 +17,30 @@ export default function PortfolioPage() {
                 align="center"
              />
 
-             <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+             <StaggerContainer className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                  {[1, 2, 3].map((i) => (
-                     <Card key={i} className="flex flex-col gap-4">
-                         <div className="bg-surface py-12 rounded-lg flex items-center justify-center border border-dashed border-border text-text-muted mb-2">
-                             Image Placeholder
-                         </div>
-                         <h3 className="text-xl font-bold bg-muted/20">
-                            <Text_03 text={`[PLACEHOLDER: Industry Project ${i}]`} />
-                         </h3>
-                         <p className="text-text-secondary text-sm">
-                             [PLACEHOLDER: Outcome Summary]
-                         </p>
-                     </Card>
+                     <RevealWrapper key={i} variant="scaleIn">
+                       <Card className="flex flex-col gap-4">
+                           <div className="bg-surface py-12 rounded-lg flex items-center justify-center border border-dashed border-border text-text-muted mb-2">
+                               Image Placeholder
+                           </div>
+                           <h3 className="text-xl font-bold bg-muted/20">
+                              <Text_03 text={`[PLACEHOLDER: Industry Project ${i}]`} />
+                           </h3>
+                           <p className="text-text-secondary text-sm">
+                               [PLACEHOLDER: Outcome Summary]
+                           </p>
+                       </Card>
+                     </RevealWrapper>
                  ))}
-             </div>
+             </StaggerContainer>
 
-             <div className="mt-20 text-center">
-                 <p className="text-lg text-text-primary mb-6">Interested in becoming one of our first case studies?</p>
-                 <Button href="/contact">Let's Talk</Button>
-             </div>
+             <RevealWrapper delay={0.2} variant="fadeUp">
+               <div className="mt-20 text-center">
+                   <p className="text-lg text-text-primary mb-6">Interested in becoming one of our first case studies?</p>
+                   <Button href="/contact">Let's Talk</Button>
+               </div>
+             </RevealWrapper>
          </div>
       </section>
     </>

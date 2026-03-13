@@ -3,9 +3,9 @@
 # Created: March 2026
 
 ## CURRENT STATUS
-Phase: 2E (Horizontal Scroll Team Section — complete)
-Last session: 14 March 2026 (Phase 2E — agent)
-Overall completion: 50%
+Phase: 2F (Ambient 3D & Particle Effects)
+Last session: 14 March 2026 (Phase 2F — agent)
+Overall completion: 90%
 
 ## COMPLETED
 - [x] 0.1  SPEC.md filled from intake form + rough content doc
@@ -61,6 +61,10 @@ Overall completion: 50%
 - [x] 3.5.1 Colour blobs added to Pain Points and Why rAIze sections
 - [x] 3.5.2 ServiceCard updated with top strips, hover effects, and updated icon styles
 - [x] 3.5.3 Stats Strip created and added to the homepage
+- [x] 2A.1–2A.10 Phase 2A baseline animations implemented across all pages
+- [x] 2B.1-2B.9 Phase 2B Scrollytelling implemented on Homepage
+- [x] 2D.1-2D.11 Phase 2D Kinetic Typography implemented on Homepage
+- [x] 2F.1-2F.10 Phase 2F Ambient 3D Particle Field implemented on Homepage Hero
 
 ## IN PROGRESS
 None — Phase 2E complete.
@@ -162,4 +166,41 @@ Created TeamHorizontalScroll.tsx — pinned horizontal scroll section with Frame
 Mobile fallback renders vertical stack of cards at < 768px.
 useReducedMotion respected — falls back to overflow-x scroll with scroll-snap.
 Replaced old grid TeamCard section on About page.
-Verification: `npx tsc --noEmit` → 0 errors. `npm run build` → success. Browser verified.
+---
+Session [5] — 14 March 2026 — Agent (Phase 2A — Baseline Animations)
+Completed: All Phase 2A tasks.
+Created `lib/animations.ts` core variants.
+Created `RevealWrapper.tsx`, `StaggerContainer.tsx`, `CountUp.tsx`.
+Replaced old hardcoded ScrollReveal wrapper with RevealWrapper/StaggerContainer in `Home`, `About`, `Services`, `Portfolio`, `Contact` pages.
+Integrated animated underline right into `SectionHeader.tsx` synchronized via Framer Motion's `isInView`.
+Resolved Typescript easing tuple mismatch bugs.
+Verification: `npx tsc --noEmit` → zero errors. `npm run build` → successful.
+---
+Session [6] — 14 March 2026 — Agent (Phase 2B — Scrollytelling)
+Completed: All Phase 2B tasks.
+Installed `@studio-freight/lenis` and wrapped app in `<SmoothScrollProvider>`.
+Added `<ScrollProgressBar>` to global layout.
+Created reusable `<StickySection>` and `<ParallaxLayer>` components.
+Built `<HowWeWork>` homepage section as a full viewport sticky narrative with 4 steps mapping to scroll progress.
+Applied `<ParallaxLayer>` to decorative blur background blobs in the hero section.
+Mobile degradation explicitly handled (Sticky and Parallax behave natively on < 768px).
+Verification: `npx tsc --noEmit` → zero errors. `npm run build` → successful.
+---
+Session [7] — 14 March 2026 — Agent (Phase 2D — Kinetic Typography)
+Completed: All Phase 2D tasks.
+Installed `splitting`.
+Created `SplitText`, `TypeReveal`, `WordFade`, `ScrollHighlight`, `BlurReveal`, `MorphingHeadline`.
+Applied `TypeReveal` to hero H1 and `WordFade` to hero sub-headline.
+Applied `MorphingHeadline` to Services section subheading.
+Applied `ScrollHighlight` to the core value proposition paragraph in the "Why rAIze" section.
+Verified all accessibility requirements (sr-only text, aria-hidden spans, useReducedMotion fallbacks).
+Verification: `npx tsc --noEmit` → zero errors. `npm run build` → successful.
+---
+Session [8] — 14 March 2026 — Agent (Phase 2F — Ambient 3D & Particle Effects)
+Completed: All Phase 2F tasks.
+Installed 3D rendering dependencies: `three`, `@react-three/fiber`, `@react-three/drei`, `@pmndrs/detect-gpu`.
+Created WebGL `ThreeCanvas` wrapper with strict ErrorBoundary and CSS radial-gradient array fallbacks.
+Created 4000-count `ParticleField` utilizing rAIze brand palette colours that dynamically respects cursor leaning.
+Integrated `<ParticleCanvas>` securely onto the homepage hero using `next/dynamic` and `ssr: false` to avoid layout shifts.
+Handled degradation gracefully by omitting canvas initialization on mobiles, or when `< 768px` browser bounds apply, relying gracefully on the responsive CSS alternative. 
+Verification: `npx tsc --noEmit` → 0 errors. `npm run build` → successful.

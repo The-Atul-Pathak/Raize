@@ -4,6 +4,8 @@ import "./globals.css";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
+import { ScrollProgressBar } from "@/components/ui/ScrollProgressBar";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -42,14 +44,17 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased`}
       >
-        <div className="flex min-h-screen flex-col">
-          <Navbar />
-          <main className="flex-1 pt-16">
-            {children}
-          </main>
-          <Footer />
-        </div>
-        <WhatsAppButton />
+        <SmoothScrollProvider>
+          <ScrollProgressBar />
+          <div className="flex min-h-screen flex-col">
+            <Navbar />
+            <main className="flex-1 pt-16">
+              {children}
+            </main>
+            <Footer />
+          </div>
+          <WhatsAppButton />
+        </SmoothScrollProvider>
       </body>
     </html>
   );
